@@ -33,7 +33,34 @@ table.center
 	margin-left:auto;
 	margin-right:auto;
 }
+ul
+{
+
+}
+li
+{
+	color: black;
+	font-size: 18px;
+}
+
 </style>
+
+<!-- Start javascript -->
+<script src="https://d3js.org/d3.v5.min.js">
+	/*
+	function draw()
+	{
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+
+		var X = 0;
+		var Y = 0;
+		var width = 100;
+		var height = 100;
+		ctx.fillRect(X, Y, width, height);
+	}
+	*/
+</script>
 </head>
 <body>
 	<h1>Comparison of owned vehicle with selected vehicle</h1>
@@ -142,10 +169,10 @@ table.center
 		</tr>
 	</table>
 
-	<h2>Comparison Table of both vehicles</h2>
+	<h2>Comparison Table/Graph of both vehicles</h2>
 
 	<!-- Comparison Table -->
-	<table class="center">
+	<table style= "float: left">
 		<tr>
 			<th>Make</th>
 			<th>{{ comparePackage.diff["cMake"] }}</th>
@@ -190,7 +217,48 @@ table.center
 			<th>You save/spend more</th>
 			<th>{{ comparePackage.diff["saveSpend"] }}</th>
 		</tr>
-
 	</table>
+
+<ul style="float:left">
+<li>
+
+The amount of fuel a car consumes is crucial to the environment. One gallon of gas, which weighs about 6.3 pounds, produces 20 pounds of carbon dioxide – the most abundant greenhouse gas. All of the following car attributes are important things to consider when thinking about the environmental impact of cars.
+</li>
+<li>
+<strong>Fuel Type</strong><br>
+The fuel type for a car can have an environmental impact. The three most common gas types: regular, mid-grade, and premium have a varied environmental impact because your car engine and gas fillers also contribute to the production of carbon monoxide. While diesel is known and can be the least environmentally friendly, not all diesel types fall under this stereotype. Biodiesel, for example, is equally or in some cases even more environmentally friendly than regular gas types.
+</li>
+<li>
+<strong>CO2</strong><br>
+While carbon monoxide is creating the greatest negative effect on the environment from your car, you can use carbon dioxide, another gas emitted from your car, to measure the environmental impact similarly to carbon monoxide. Carbon dioxide has a negative effect on humans because the increased amount of carbon dioxide pushes out the available oxygen for us to breath. The more carbon dioxide the car produces, the less oxygen for us, and greater negative impact on the environment.
+</li>
+<li>
+<strong>Combined MPG</strong><br>
+A higher MPG means more miles per gallon and less gas consumed. Combined fuel economy is a weighted average of City and Highway MPG values that is calculated by weighting the City value by 55% and the Highway value by 45%
+Highway MPG: The miles per gallon when the average speed of your car on a highway is 50 mph. 
+City MPG: The miles per gallon when the average speed of your car at 10 mph with frequent stops.
+</li>
+<li>
+<strong>Transmission</strong><br>
+When it comes to transmissions, the bottom line is that manual transmissions use a smaller amount of fuel than their automatic counterparts. Why is this the case? The main reason is that automatic transmissions require the use of a fluid coupling known as a torque converter located between the mechanical gears and the engine. This enables a person to bring an automatic transmission car to a stop without the need to press a clutch. The engine can continue to turn while the car is not in motion because of the viscous coupling. While the car is moving, the torque converter does not have complete efficiency and suffers from some power loss.
+https://usgreentechnology.com/greener-car-choice-automatic-manual/
+</li>
+<li>
+<strong>You Save You Spend</strong><br>
+The amount of money you would save on gas per year if you bought a new car or the amount of money you lose by keeping your current car.
+</li>
+<li>
+You Save You Spend = (Average annual price of gas with a new car) – (Average annual price of gas with current car over five years).
+</li>
+<li>
+Typically, a new car is going to be more environmentally friendly, with higher MPG, requiring less gas per year. A negative number indicates how much more, on average, you are spending on gas per year by keeping your current car then getting a new one. While 0 means the current car is spending the same amount per year on gas as the average fuel cost of a new car. 
+</li>
+<li>
+<strong>Fuel Cost</strong><br> 
+How much the gas will cost for the car per year. Annual fuel cost is based on 15,000 miles, 55% city driving, and the price of fuel used by the vehicle
+</li>
+</ul>
+
+	
 </body>
 </html>

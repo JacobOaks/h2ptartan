@@ -7,7 +7,7 @@
 		top: 50%;
 		left: 50%;
 		-moz-transform: translateX(-50%) translateY(-50%);
-		-webkit-transform: translateX(-50%) translate(-50%);
+		-webkit-transform: translateX(-50%) translateY(-50%);
 		transform: translateX(-50%) translateY(-50%);
 	}
 	body 
@@ -29,11 +29,17 @@
 	{
 		text-align: center;
 	}
+	img
+	{
+		padding-top: 20px;
+	}
 	</style>
 	</head>
 	<body>
 	<div class = "center">
-		<h1>Welcome to Carbin-Effect</h1>
+		<!--	<h1>Welcome to Carbin-Effect</h1>	-->
+		<img src="CARbin_Effect-2.png" alt="Logo for carbin effect">
+		
 		<p><i>A pollution tracking website that will make <strong>you</strong> more consciously aware of how <strong>your</strong> actions impact the environment.</i> 
 		<p>To illustrate how your car or cars affect the environment, you will input each car that you own and see the waste products of manufacturing and running the vehicles. Afterwards, you will have the option to compare to different cars to compare the effects of each vehicle. To begin, please press the button below.</p>
 		<p><a href="/forms">{{ form.submit() }}</a></p>
