@@ -1,1 +1,183 @@
 {% extends "base.html" %}
+<html>
+<head>
+<style>
+body
+{
+	background-color: #228B22;
+}
+h2, h3, p
+{
+	text-align: center;
+}
+table
+{
+	font-size: 20px;
+	width: 50%;
+	height: 50%;
+}
+th
+{
+	text-align: left;
+}
+</style>
+</head>
+<body>
+	<h2>Comparison of owned vehicle with selected vehicle</h2>
+	<p><i>Vehicle Models from 1985-2019</i></p>
+	
+	<!-- Table for owned car -->
+	<table style="float:left">
+		<tr>
+			<th></th>
+		</tr>
+		<tr>
+			<th>Make</th>
+			<th>{{ comparePackage.owned.cMake }}</th>
+		</tr>
+		<tr>
+			<th>Model</th>
+			<th>{{  comparePackage.owned.cModel }}</th>
+		</tr>
+		<tr>
+			<th>Year</th>
+			<th>{{  comparePackage.owned.cYear }}</th>
+		</tr>
+		<tr>
+			<th>Fuel Cost/Year</th>
+			<th>{{  comparePackage.owned.fCost }}</th>
+		</tr>
+		<tr>
+			<th>Fuel Type</th>
+			<th>{{  comparePackage.owned.fType }}</th>
+		</tr>
+		<tr>
+			<th>HighWay MPG</th>
+			<th>{{  comparePackage.owned.hMpg }}</th>
+		</tr>
+		<tr>
+			<th>City MPG</th>
+			<th>{{ comparePackage.owned.cMpg }}</th>
+		</tr>
+		<tr>
+			<th>Combined Mpg</th>
+			<th>{{  comparePackage.owned.comboMpg }}</th>
+		</tr>
+		<tr>
+			<th>Transmission Type</th>
+			<th>{{  comparePackage.owned.transType }}</th>
+		</tr>
+		<tr>
+			<th>CO2 in Grams/Mile</th>
+			<th>{{  comparePackage.owned.coTwo }}</th>
+		</tr>
+		<tr>
+			<th>You save/spend more</th>
+			<th>{{  comparePackage.owned.saveSpend }}</th>
+		</tr>
+	</table>
+
+<!--Table for selected theoretical car -->
+
+	<table style="float: left">
+		<tr>
+			<th></th>
+		</tr>
+		<tr>
+			<th>Make</th>
+			<th>{{  comparePackage.theoretical.cMake }}</th>
+		</tr>
+		<tr>
+			<th>Model</th>
+			<th>{{ comparePackage.theoretical.cModel }}</th>
+		</tr>
+		<tr>
+			<th>Year</th>
+			<th>{{ comparePackage.theoretical.cYear }}</th>
+		</tr>
+		<tr>
+			<th>Fuel Cost/Year</th>
+			<th>{{ comparePackage.theoretical.fCost }}</th>
+		</tr>
+		<tr>
+			<th>Fuel Type</th>
+			<th>{{ comparePackage.theoretical.fType }}</th>
+		</tr>
+		<tr>
+			<th>HighWay MPG</th>
+			<th>{{ comparePackage.theoretical.hMpg }}</th>
+		</tr>
+		<tr>
+			<th>City MPG</th>
+			<th>{{ comparePackage.theoretical.cMpgT }}</th>
+		</tr>
+		<tr>
+			<th>Combined Mpg</th>
+			<th>{{ comparePackage.theoretical.comboMpg }}</th>
+		</tr>
+		<tr>
+			<th>Transmission Type</th>
+			<th>{{ comparePackage.theoretical.transType }}</th>
+		</tr>
+		<tr>
+			<th>CO2 in Grams/Mile</th>
+			<th>{{ comparePackage.theoretical.coTwo }}</th>
+		</tr>
+		<tr>
+			<th>You save/spend more</th>
+			<th>{{ comparePackage.theoretical.saveSpend }}</th>
+		</tr>
+	</table>
+
+	<h3>Comparison Table of both vehicles</h3>
+
+	<!-- Comparison Table -->
+	<table style="float: center">
+		<tr>
+			<th>Make</th>
+			<th>{{ comparePackage.diff.cMake }}</th>
+		</tr>
+		<tr>
+			<th>Model</th>
+			<th>{{ comparePackage.diff.cModel }}</th>
+		</tr>
+		<tr>
+			<th>Year</th>
+			<th>{{ comparePackage.diff.cYear }}</th>
+		</tr>
+		<tr>
+			<th>Fuel Cost/Year</th>
+			<th>{{ comparePackage.diff.fCost }}</th>
+		</tr>
+		<tr>
+			<th>Fuel Type</th>
+			<th>{{ comparePackage.diff.fType }}</th>
+		</tr>
+		<tr>
+			<th>Highway MPG</th>
+			<th>{{ comparePackage.diff.hMpg }}</th>
+		</tr>
+		<tr>
+			<th>City MPG</th>
+			<th>{{ comparePackage.diff.cMpg }}</th>
+		</tr>
+		<tr>
+			<th>Combined MPG</th>
+			<th>{{ comparePackage.diff.comboMpg }}</th>
+		</tr>
+		<tr>
+			<th>Transmission Type</th>
+			<th>{{ comparePackage.diff.transType }}</th>
+		</tr>
+		<tr>
+			<th>C02 in Grams/Mile</th>
+			<th>{{ comparePackage.diff.coTwo }}</th>
+		</tr>
+		<tr>
+			<th>You save/spend more</th>
+			<th>{{ comparePackage.diff.saveSpend }}</th>
+		</tr>
+
+	</table>
+</body>
+</html>
