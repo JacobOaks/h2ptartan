@@ -42,12 +42,20 @@ db.event.listen(db.session, 'before_commit', SearchableMixin.before_commit)
 db.event.listen(db.session, 'after_commit', SearchableMixin.after_commit)
 
 class Car(SearchableMixin, db.Model):
-    __searchable__ = ['make', 'model']
-    id = db.Column(db.Integer, primary_key=True)
-    make = db.Column(db.String(120), index=True)
-    model = db.Column(db.String(120), index=True, unique=True)
+    __searchable__ = ['make', 'model', ]
+    id = db.Column(db.Integer, primary_key=True) #unique id
+    cMake = db.Column(db.String(128), index=True) #make
+    cModel = db.Column(db.String(128), index=True, unique=True) #model
+    cYear = db.Column(db.Integer, index=True) #year
+    fCost = db.Column(db.Integer, index=True) #cost per year
+    fType = db.Column(db.String(32), index=True) #either regular, premium, or diesel
+    hMpg = db.Column(db.Integer, index=True) #highway hMpg
+    cMpg = db.Column(db.Integer, index=True) #city hMPG
+    comboMpg = db.Column(db.Integer, index=True) #combined
+    transType = db.Column(db.String(32), index=True) #how many gears and manual/automatic
+    coTwo = db.Column(db.Float, index=True) #in grams per mile
+    saveSpend = db.Column(db.Integer, index=True) #fuel cost over five years averaged against the normal car
 
-    # TODO: add the new columns
     # TODO: migrate and update the database
 
     def __repr__(self):
