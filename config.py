@@ -1,2 +1,4 @@
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'cat'
+import os
+
+class Config(object):
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'cat'
