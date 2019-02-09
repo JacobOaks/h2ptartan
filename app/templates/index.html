@@ -1,5 +1,42 @@
 <htlm>
-<h1>Welcome to Carbin-Effect</h1>
-
-<p><a href="/forms">{{ form.submit() }}</a></p>
+	<head>
+	<style>
+	.center
+	{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-moz-transform: translateX(-50%) translateY(-50%);
+		-webkit-transform: translateX(-50%) translate(-50%);
+		transform: translateX(-50%) translateY(-50%);
+	}
+	body 
+	{
+		background-color: #228B22;
+	}
+	h1 
+	{
+		color: #D3D3D3;
+		font-size: 56px;
+		font-family: Georgia;
+		margin: auto;
+	}
+	p
+	{
+		font-size: 28px;
+	}
+	div
+	{
+		text-align: center;
+	}
+	</style>
+	</head>
+	<body>
+	<div class = "center">
+		<h1>Welcome to Carbin-Effect</h1>
+		<p><i>A pollution tracking website that will make <strong>you</strong> more consciously aware of how <strong>your</strong> actions impact the environment.</i> 
+		<p>To illustrate how your car or cars affect the environment, you will input each car that you own and see the waste products of manufacturing and running the vehicles. Afterwards, you will have the option to compare to different cars to compare the effects of each vehicle. To begin, please press the button below.</p>
+		<p><a href="/forms">{{ form.submit() }}</a></p>
+	</div>
+</body>
 </htlm>
