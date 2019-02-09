@@ -17,7 +17,7 @@ class SearchableMixin(object):
     def before_commit(cls, session):
         session._changes = {
             'add': list(session.new),
-            'update': list(session,dirty),
+            'update': list(session.dirty),
             'delete': list(session.deleted)
         }
 
@@ -59,6 +59,23 @@ class Car(SearchableMixin, db.Model):
 
     def __repr__(self):
         return '<Car {} {}>'.format(self.cMake, self.cModel)
+
+    def to_dict(self):
+        data = {
+            'id': self.id,
+            'cMake': self.cMake,
+            'cModel': self.cModel,
+            'cYear': self.cYear,
+            'fCost': self.fCost,
+            'fType': self.fType,
+            'hMpg': self.hMpg,
+            'cMpg': self.cMpg,
+            'comboMpg': self.comboMpg,
+            'transType': self.transType,
+            'coTwo': self.coTwo,
+            'saveSpend': self.saveSpend
+        }
+        return data
 
     def from_dict(self, data, new_car=False):
         for field in ['cMake', 'cModel']:
