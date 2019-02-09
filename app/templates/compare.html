@@ -6,9 +6,15 @@ body
 {
 	background-color: #228B22;
 }
-h2, h3, p
+h1, h2, p
 {
 	text-align: center;
+	color: #D3D3D3;
+}
+table, tr
+{
+	border: 2px dashed black;
+	background-color: #D3D3D3;
 }
 table
 {
@@ -19,17 +25,24 @@ table
 th
 {
 	text-align: left;
+	font-family: TimesNewRoman;
+	color: black;
+}
+table.center 
+{
+	margin-left:auto;
+	margin-right:auto;
 }
 </style>
 </head>
 <body>
-	<h2>Comparison of owned vehicle with selected vehicle</h2>
+	<h1>Comparison of owned vehicle with selected vehicle</h1>
 	<p><i>Vehicle Models from 1985-2019</i></p>
 	
 	<!-- Table for owned car -->
 	<table style="float:left">
 		<tr>
-			<th></th>
+			<th>Owned Car</th>
 		</tr>
 		<tr>
 			<th>Make</th>
@@ -81,7 +94,7 @@ th
 
 	<table style="float: left">
 		<tr>
-			<th></th>
+			<th>Comparsion Car</th>
 		</tr>
 		<tr>
 			<th>Make</th>
@@ -129,10 +142,10 @@ th
 		</tr>
 	</table>
 
-	<h3>Comparison Table of both vehicles</h3>
+	<h2>Comparison Table of both vehicles</h2>
 
 	<!-- Comparison Table -->
-	<table style="float: center">
+	<table class="center">
 		<tr>
 			<th>Make</th>
 			<th>{{ comparePackage.diff["cMake"] }}</th>
