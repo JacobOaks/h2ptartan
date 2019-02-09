@@ -1,4 +1,5 @@
-from app import db, search
+from app import db
+from app.search import *
 
 class SearchableMixin(object):
     @classmethod
@@ -56,7 +57,10 @@ class Car(SearchableMixin, db.Model):
     coTwo = db.Column(db.Float, index=True) #in grams per mile
     saveSpend = db.Column(db.Integer, index=True) #fuel cost over five years averaged against the normal car
 
-    # TODO: migrate and update the database
-
     def __repr__(self):
-        return '<Car {} {}>'.format(self.make, self.model)
+        return '<Car {} {}>'.format(self.cMake, self.cModel)
+
+    def from_dict(self, data, new_car=False):
+        for field in ['cMake', 'cModel']:
+            if field in data:
+                setattr(self, field, data[field])
