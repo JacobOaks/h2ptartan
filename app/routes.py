@@ -13,7 +13,7 @@ def index():
 
 @app.route('/forms', methods=['GET', 'POST'])
 def forms():
-    return render_template("compare.html")
+    return render_template("forms.html")
 
 @app.route('/search')
 def search():
@@ -28,3 +28,7 @@ def search():
         if page > 1 else None
     return render_template('search.html', title=_('Search'), posts=posts,
                            next_url=next_url, prev_url=prev_url)
+
+@app.route('/comparison')
+def comparison():
+    return render_template("compare.html")
