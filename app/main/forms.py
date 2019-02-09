@@ -2,6 +2,7 @@ from flask import request
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
+from app.models import Car
 
 class Start(FlaskForm):
     submit = SubmitField('START')
