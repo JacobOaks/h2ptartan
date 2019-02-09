@@ -47,5 +47,8 @@ class Car(SearchableMixin, db.Model):
     make = db.Column(db.String(120), index=True)
     model = db.Column(db.String(120), index=True, unique=True)
 
+    # TODO: add the new columns
+    # TODO: migrate and update the database
+
     def __repr__(self):
         return '<Car {} {}>'.format(self.make, self.model)
