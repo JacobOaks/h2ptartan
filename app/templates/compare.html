@@ -11,16 +11,20 @@ h1, h2, p
 	text-align: center;
 	color: #D3D3D3;
 }
+h2
+{
+	padding-top: 510px;
+}
 table, tr
 {
-	border: 2px dashed black;
+	border: 2px groove black;
 	background-color: #D3D3D3;
 }
 table
 {
 	font-size: 20px;
 	width: 50%;
-	height: 50%;
+	height: 70%;
 }
 th
 {
@@ -44,22 +48,94 @@ li
 }
 
 </style>
-
-<!-- Start javascript -->
-<script src="https://d3js.org/d3.v5.min.js">
-	/*
-	function draw()
+<script>
+	function yearCheck(int diffYear)
 	{
-		var canvas = document.getElementById("myCanvas");
-		var ctx = canvas.getContext("2d");
-
-		var X = 0;
-		var Y = 0;
-		var width = 100;
-		var height = 100;
-		ctx.fillRect(X, Y, width, height);
+		if(diffYear < 0)
+		{
+			Math.abs(diffYear)
+			document.write("Your car is " + diffYears + " years older than selected car");
+		}
+		else if(diffYear > 0)
+		{
+			document.write("The selected car is " + diffYear + " years older than your car")
+		}
 	}
-	*/
+	function costCheck(int diffCost)
+	{
+		if(diffCost < 0)
+		{
+			Math.abs(diffCost)
+			document.write("The selected car is " + diffCost + " more expensive to run per year than your car.")
+		}
+		else if(diff > 0)
+		{
+			document.write("Your car is " + diffCost + " more expensive to run per year than the selected car.")
+		}
+	}
+	function hmpgCheck(int hMpg)
+	{
+		if(hMpg < 0)
+		{
+			Math.abs(hMpg)
+			document.write("The selected car is more efficient during highway driving by " + hMpg + " miles per gallon.")
+		}
+		else if(hMpg > 0)
+		{
+			document.write("Your car is more effiecient during highway driving by " + hMpg + " miles per gallon.")
+		}
+	}
+	function cmpgCheck(int cMpg)
+	{
+		if(cMpg < 0)
+		{
+			Math.abs(cMpg)
+			document.write("The selected car is more efficient during city driving by " + cMpg + " miles per gallon.")
+		}
+		else if(cMpg > 0)
+		{
+			document.write("Your car is more effiecient during city driving by " + cMpg + " miles per gallon.")
+		}
+	}
+	function comMpgCheck(int comboMpg)
+	{
+		if(comboMpg < 0)
+		{
+			Math.abs(comboMpg)
+			document.write("The selected car is more efficient on average by " + comboMpg + " miles per gallon.")
+		}
+		else if(comboMpg > 0)
+		{
+			document.write("Your car is more effiecient on average by " + comboMpg + " miles per gallon.")
+		}
+	}
+	function coTwoCheck(int coTwo)
+	{
+		if(coTwo < 0)
+		{
+			Math.abs(coTwo)
+			document.write("Your car produces " + coTwo + " less grams per mile of CO2 than the selected car.")
+		}
+		else if(coTwo > 0)
+		{
+			document.write("Your car produces " + coTwo + " more grams per mile of CO2 than the selected car.")
+		}
+	}
+	function saveSpendCheck(int saSp)
+	{
+		if(saSp > 0)
+		{
+			document.write("Your car will save you " + saSp + " dollars over a five year period in gas prices.")
+		}
+		else if (saSp < 0)
+		{
+			document.write("The selected car will save you " + saSp + " dollars over a five year period. in gas prices.")
+		}
+		else if(saSp == 0)
+		{
+			document.write("Both cars will cost you the same amount over a five year period in gas prices.")
+		}
+	}
 </script>
 </head>
 <body>
@@ -69,7 +145,7 @@ li
 	<!-- Table for owned car -->
 	<table style="float:left">
 		<tr>
-			<th>Owned Car</th>
+			<th>Car you own</th>
 		</tr>
 		<tr>
 			<th>Make</th>
@@ -169,53 +245,45 @@ li
 		</tr>
 	</table>
 
-	<h2>Comparison Table/Graph of both vehicles</h2>
+	<h2>Comparison Table</h2>
 
 	<!-- Comparison Table -->
-	<table style= "float: left">
-		<tr>
-			<th>Make</th>
-			<th>{{ comparePackage.diff["cMake"] }}</th>
-		</tr>
-		<tr>
-			<th>Model</th>
-			<th>{{ comparePackage.diff["cModel"] }}</th>
-		</tr>
+	<table class = "center">
 		<tr>
 			<th>Year</th>
-			<th>{{ comparePackage.diff["cYear"] }}</th>
+			<th>yearCheck({{ comparePackage.diff["cYear"]}})</th>
 		</tr>
 		<tr>
-			<th>Fuel Cost/Year</th>
-			<th>{{ comparePackage.diff["fCost"] }}</th>
+			<th>Cost</th>
+			<th>costCheck({{ comparePackage.diff["fCost"]}})</th>
 		</tr>
 		<tr>
 			<th>Fuel Type</th>
-			<th>{{ comparePackage.diff["fType"] }}</th>
+			<th>document.write("Your car uses " + comparePackage.owned["fType"] + " as fuel, and the selected car uses " + comparePackage.theoretical["fType"] + " as fuel")</th>
 		</tr>
 		<tr>
-			<th>Highway MPG</th>
-			<th>{{ comparePackage.diff["hMpg"] }}</th>
+			<th>HighWay MPG</th>
+			<th>hmpgCheck({{ comparePackage.diff["hMpg"] }})</th>
 		</tr>
 		<tr>
 			<th>City MPG</th>
-			<th>{{ comparePackage.diff["cMpg"] }}</th>
+			<th>cmpgCheck({{ comparePackage.diff["cMpg"] }})</th>
 		</tr>
 		<tr>
 			<th>Combined MPG</th>
-			<th>{{ comparePackage.diff["comboMpg"] }}</th>
+			<th>comMpgCheck({{ comparePackage.diff["comboMpg"] }})</th>
 		</tr>
 		<tr>
 			<th>Transmission Type</th>
-			<th>{{ comparePackage.diff["transType"] }}</th>
+			<th>document.write("Your car uses a " + {{ comparePackage.owned["transType"] }} + " transmission. The selected car uses a " + {{ comparePackage.diff["transType"] }} + " transmission".)</th>
 		</tr>
 		<tr>
-			<th>C02 in Grams/Mile</th>
-			<th>{{ comparePackage.diff["coTwo"] }}</th>
+			<th>CO2 output</th>
+			<th>coTwoCheck({{ comparePackage.diff["coTwo"] }})</th>
 		</tr>
 		<tr>
-			<th>You save/spend more</th>
-			<th>{{ comparePackage.diff["saveSpend"] }}</th>
+			<th>You Save/Spend More</th>
+			<th>saveSpendCheck({{ comparePackage.diff["saveSpend"] }})</th>
 		</tr>
 	</table>
 
